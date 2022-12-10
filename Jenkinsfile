@@ -1,8 +1,4 @@
 node{ 
-
-    stage 'git'
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/jleetutorial/maven-project.git']]])
-  
     stage 'Build'
     sh 'mvn clean package'
     echo 'build is complete'
