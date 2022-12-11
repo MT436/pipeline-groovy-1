@@ -1,6 +1,6 @@
 node{ 
     stage 'Build'
-    sh '*/*.war mvn clean package'
+    sh '/var/lib/jenkins/workspace/pipeline 2 mvn clean package'
     echo 'build is complete'
     //can be built with sonar in the same content
 
@@ -8,7 +8,7 @@ node{
     stage("SonarQube analysis") {
           node {
               withSonarQubeEnv('sonar') {
-                 sh '*/*.war mvn sonar:sonar'
+                 sh '/var/lib/jenkins/workspace/pipeline 2 mvn sonar:sonar'
 //it creates sonar project if we want we can add quality using snippet
               }    
           }
